@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Table Demo</title>
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.5.0-alpha.1/jquery.mobile-1.5.0-alpha.1.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.5.0-alpha.1/jquery.mobile-1.5.0-alpha.1.min.js"></script>
+</head>
+<body>
+    <div data-role="page"> <!--JQuery mobile page-->
+        <div data-role="header">
+            <h1>College Website</h1>
+        </div>
+        <div role="main" class="ui-content">
+            <h3>College Information Table</h3>
+            <table data-role="table" id="companyTable">
+                <thead>
+                    <tr>
+                        <th>College</th>
+                        <th>Department</th>
+                        <th>Domain</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>PICT</td>
+                        <td>Information Technology</td>
+                        <td><a href="https://pict.edu/" data-rel="external">https://pict.edu/</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div data-role="footer">
+            <input type="button" id="Button" value="Value of the classes option">
+            <div id="log"></div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            // Initialize table widget
+            $("#companyTable").table();
+            
+            // Example of changing table option
+            $("#Button").on('click', function () {
+                var a = $("#companyTable").table("option", "classes.Name");
+                $("#log").html(a);
+            });
+        });
+    </script>
+</body>
+</html>
